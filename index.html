@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metallica Project - Sad But True</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Metal+Mania&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #121212;
+            --light-text: #f1f1f1;
+            --accent-color: #c0392b;
+            --secondary-bg: #1e1e1e;
+            --metallica-yellow: #ffcc00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            margin-top: 30px;
+            padding-bottom: 40px
+
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-family: 'Metal Mania', cursive;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--metallica-yellow);
+            text-shadow: 0 0 10px rgba(0,0,0,0.7);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            font-size: 1.2rem;
+            animation: bounce 2s infinite;
+        }
+
+        .video-content {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 1px solid var(--metallica-yellow);
+        }
+
+        .video-content iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        h2 {
+            font-family: 'Metal Mania', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--metallica-yellow);
+            text-align: center;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-title {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .about-members {
+            margin-top: 20px
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border: 2px solid var(--metallica-yellow);
+            height: auto;
+        }
+
+        .project-idea {
+            background-color: var(--secondary-bg);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .video-box {
+            background-color: var(--secondary-bg);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .video-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .video-placeholder {
+            background-color: #333;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 1px solid var(--metallica-yellow);
+        }
+
+        .additional-info {
+            background-color: var(--secondary-bg);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .additional-info h3 {
+            color: var(--metallica-yellow);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: var(--light-text);
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--metallica-yellow);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--light-text);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #a82315;
+        }
+
+        .project-details {
+            margin-top: 30px;
+        }
+
+        .project-details h3 {
+            color: var(--metallica-yellow);
+            margin-bottom: 10px;
+            margin-top: 30px
+        }
+
+        .team-member {
+            display: inline-block;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            padding: 5px 15px;
+            background-color: rgba(255, 204, 0, 0.1);
+            border-radius: 20px;
+            border: 1px solid var(--metallica-yellow);
+        }
+
+        .scene-description {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-left: 3px solid var(--metallica-yellow);
+            margin: 15px 0;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .project-idea, .additional-info {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1 class="logo">Metallica Project</h1>
+    <p class="subtitle">Sad But True</p>
+    <div class="scroll-down">↓ Гортайте вниз ↓</div>
+</header>
+
+<section id="about" class="container">
+    <h2>Про нас</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p class="about-title"><strong>Учасники проєкту:</strong></p>
+            <p>Студенти групи ІУС-501</p>
+            <p>Освітньо-професійної програми «Інформаційні управляючі системи та технології»</p>
+            <div class="about-members">
+                <span class="team-member">Володін Вʼячеслав</span>
+                <span class="team-member">Ковтун Яна</span>
+            </div>
+        </div>
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Електрогітара" width="400">
+        </div>
+    </div>
+</section>
+
+<section id="project" class="container">
+    <h2>Ідея проєкту</h2>
+    <div class="project-idea">
+        <p>Гітаріст виконує вступ до пісні <em>Metallica — Sad But True</em>. Це потужна композиція, що викликає бажання качати головою в ритм. Після 20 секунд гри на гітарі з'являється напис <em>"Ready to headbang?"</em>, і далі гітарист продовжує грати в різних образах, які змінюються кожні кілька тактів: майка, футболка, пальто з капелюхом, гавайська рубаха тощо.</p>
+
+        <div class="project-details">
+            <h3>Ролі в проєкті:</h3>
+            <ul>
+                <li><strong>Гітарист:</strong> Володін Вʼячеслав</li>
+                <li><strong>Оператор і режисер:</strong> Яна Ковтун</li>
+                <li><strong>Костюмер:</strong> Яна Ковтун</li>
+                <li><strong>Монтаж:</strong> Володін Вʼячеслав</li>
+            </ul>
+
+            <h3>Використане обладнання:</h3>
+            <p>Камера <strong>Nikon D800</strong></p>
+
+            <h3>Мета:</h3>
+            <p>Подарувати глядачу драйвове музичне відео з елементами гумору та неочікуваності, поєднуючи класичний хеві-метал з візуальними змінами образів. Показати, що важка музика — це не лише серйозно, а й креативно та весело.</p>
+
+            <h3>Цільова аудиторія:</h3>
+            <ul>
+                <li>Любителі рок-музики та Metallica</li>
+                <li>Молодь 16–35 років</li>
+                <li>Користувачі YouTube, Instagram Reels, TikTok</li>
+                <li>Глядачі, які цінують креативний монтаж і зміну образів</li>
+                <li>Музиканти-початківці та гітаристи</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="videos" class="container">
+    <h2>Відеоконтент</h2>
+
+    <div class="video-container">
+        <div class="video-box">
+            <div class="video-content">
+                <iframe
+                        width="100%"
+                        height="315"
+                        src="https://www.youtube.com/embed/mlmnMTP_K3o"
+                        title="Metallica - Sad But True Cover"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="additional" class="container">
+    <h2>Сценарій відеопроєкту</h2>
+    <div class="additional-info">
+        <div class="scene-description">
+            <h3>[ІНТРО — 5 сек]</h3>
+            <p>Кадр: гітарист у темному образі, фокус на гітаріста.</p>
+            <p>Звук: потужні перші акорди пісні <em>Sad But True</em>.</p>
+        </div>
+
+        <div class="scene-description">
+            <h3>[СТАРТ ВІДЕО — 20 сек]</h3>
+            <p>Камера показує, як гітарист грає вступ пісні. Освітлення стримане, камера тримає крупний план гітари та обличчя.</p>
+            <p>Атмосфера серйозна, звук гучний, ритмічний, качає.</p>
+        </div>
+
+        <div class="scene-description">
+            <h3>[ТЕКСТ-ПАУЗА — 3 сек]</h3>
+            <p>На екрані чорний фон з білим написом:</p>
+            <p><strong>"Ready to headbang?"</strong> (укр. "Готові качати головою?")</p>
+            <p>Звук: різкий стоп музики, ніби пауза.</p>
+        </div>
+
+        <div class="scene-description">
+            <h3>[ГОЛОВНА ЧАСТИНА — ~30 сек]</h3>
+            <p>Музика поновлюється. Кожен новий такт — новий образ гітариста:</p>
+            <ul>
+                <li>майка (простий повсякденний стиль)</li>
+                <li>футболка з логотипом рок-групи</li>
+                <li>пальто й капелюх (майже як блюзмен)</li>
+                <li>гавайська рубаха із шапкою ушанкою (повний контраст до музики)</li>
+                <li>футболка в стилі 80-х</li>
+            </ul>
+            <p>Швидкий монтаж. Зміна образів виглядає динамічно і викликає усмішку. Музика не зупиняється, headbang триває.</p>
+        </div>
+
+        <div class="scene-description">
+            <h3>[АУТРО — 5 сек]</h3>
+            <p>Усі образи викладаються в мозаїку. Риф затухає.</p>
+            <p>Фон — швидкий монтаж усіх образів поспіль.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="container">
+    <p>© 2025 Metallica Project. Всі права захищені.</p>
+    <p>Проєкт створено в рамках навчальної дисципліни "Управління відеоконтентом"</p>
+    <p>Київ – 2025</p>
+</footer>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+</script>
+</body>
+</html>
+
